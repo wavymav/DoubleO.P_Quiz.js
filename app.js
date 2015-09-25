@@ -21,4 +21,19 @@ document.addEventListener('DOMContentLoaded', function(){
 		this.score = 0;
 		this.currentCount = 0;
 	}
+
+	Quiz.prototype.getCurrentQuestion = function() {
+		return this.questions[this.currentCount];
+	};
+
+	Quiz.prototype.selectedGuess = function(answer) {
+		if (this.getCurrentQuestion().correctChoice(answer)) {
+			this.score++;
+		}
+		this.currentCount++;
+	};
+
+	Quiz.prototype.endQuiz = function() {
+		return this.currentCount >= this.questions.length;
+	};
 });

@@ -36,4 +36,13 @@ document.addEventListener('DOMContentLoaded', function(){
 	Quiz.prototype.endQuiz = function() {
 		return this.currentCount >= this.questions.length;
 	};
+
+	var questions= [
+		new Question('How many States are in the United States?', '50', ['40', '30', '50', '45']),
+		new Question('How many legs does a spider have?', '8', ['4', '6', '10', '8']),
+		new Question('How many football teams are in the NFL?', '32', ['32', '26', '44', '30']),
+		new Question('Who is the President of the United States as of (2015)?', 'Barack Obama', ['George W. Bush', 'Barack Obama', 'Hillary Clinton', 'Donald Trump']),
+	];
+
+	var coolQuiz = new Quiz(questions);
 });

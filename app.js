@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', function(){
 		this.selections = selections;
 	}
 
+	Question.prototype.correctChoice = function(selection) {
+		return this.answer === selection;
+	};
+
 	function Quiz(questions) {
 		this.questions = questions;
 		this.score = 0;

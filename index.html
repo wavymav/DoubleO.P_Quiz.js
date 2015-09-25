@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>Quiz</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+		<script src="app.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -21,15 +22,15 @@
 							</div>
 							<div class="row">
 								<div class="col s2">
-									<h3>Q.1)</h3>
+									<h3 id="question-number">Q.1)</h3>
 								</div>
 								<div class="col s10">
-									<h4>How many states are in the United States?</h4>
+									<h4 id="question">How many states are in the United States?</h4>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col s12">
-									<div class="collection hoverable">
+									<div class="collection hoverable" id="quiz-selection">
 	        					<a href="#!" class="collection-item center-align active">50</a>
 										<a href="#!" class="collection-item center-align">40</a>
 										<a href="#!" class="collection-item center-align">60</a>

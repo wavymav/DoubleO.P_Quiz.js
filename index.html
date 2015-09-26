@@ -4,37 +4,37 @@
 		<meta charset="utf-8">
 		<title>Quiz</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-		<script src="app.js"></script>
+		<!-- <script src="app.js"></script> -->
 	</head>
 	<body>
 		<div class="container">
 			<div class="row" style="padding-top: 150px">
 				<div class="col s12">
 					<div class="card-panel z-depth-4">
-						<div class="container" style="height: 600px">
+						<div class="container">
 							<div class="row">
-								<div class="col s10">
+								<div class="col s9" id="quiz">
 									<h1>Quiz</h1>
 								</div>
-								<div class="col s2">
+								<div class="col s3">
 									<h3 id="question-count">1/10</h3>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col s2">
+								<div class="col s3">
 									<h3 id="question-number">Q.1)</h3>
 								</div>
-								<div class="col s10">
+								<div class="col s9">
 									<h4 id="question">How many states are in the United States?</h4>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col s12">
 									<div class="collection hoverable" id="quiz-selection">
-	        					<a href="#!" class="collection-item center-align active">50</a>
-										<a href="#!" class="collection-item center-align">40</a>
-										<a href="#!" class="collection-item center-align">60</a>
-										<a href="#!" class="collection-item center-align">70</a>
+	        					<a href="#!" class="collection-item center-align active" id="chioce-1">50</a>
+										<a href="#!" class="collection-item center-align" id="chioce-2">40</a>
+										<a href="#!" class="collection-item center-align" id="chioce-3">60</a>
+										<a href="#!" class="collection-item center-align" id="chioce-4">70</a>
 									</div>
 								</div>
 							</div>

@@ -1,9 +1,52 @@
 document.addEventListener('DOMContentLoaded', function(){
 
-	var questionElement = document.getElementById('question'),
-			questionNumberElement = document.getElementById('question-number'),
-			questionCountElement = document.getElementById('question-count'),
-			quizSelectionElement = document.getElementById('quiz-selection');
+	var QuizRenderUI = {
+		renderHTML: function(id, text) {
+			var template = document.getElementById(id);
+			template.innerHTML = text;
+		},
+		renderScore: function() {
+			var quizOverHTML = '<h1>THe Quiz has ended</h1>' +
+												 '<h2>Your score was: ' + (coolQuiz.score/coolQuiz.questions.length) * 100 +'%</h2>';
+			this.renderHTML('quiz', quizOverHTML);
+		},
+		renderProgress: function() {
+      var currentQuestionNumber = coolQuiz.currentCount + 1;
+      this.renderHTML('question-count', currentQuestionNumber + '/' + coolQuiz.questions.length);
+    },
+		renderQuestionNumber: function() {
+			var currentQuestionNumber = coolQuiz.currentCount + 1;
+			this.renderHTML('question-number', 'Q.' + currentQuestionNumber + ')');
+		},
+		renderQuestion: function() {
+			this.renderHTML('question', coolQuiz.getCurrentQuestion().question);
+		},
+		renderSelections: function() {
+      var choices = quiz.getCurrentQuestion().selections;
+
+      for(var i = 0; i < selections.length; i++) {
+          this.renderHTML('quiz-selection' + i, selections[i]);
+          this.selectionHandler("chioce-" + i, selections[i]);
+      }
+    },
+		renderNext: function() {
+			if (coolQuiz.endQuiz()) {
+				this.renderScore();
+			} else {
+				this.renderProgress();
+				this.renderQuestionNumber();
+				this.renderQuestion();
+				this.renderChoices();
+			}
+		},
+		selectionHandler: function(id, selection) {
+			var button = document.getElementById(id);
+			button.onclick = function() {
+				coolQuiz.selectedGuess(selection);
+				QuizRenderUI.renderNext();
+			};
+		}
+	};
 
 
 	function Question(question, answer, selections) {

@@ -43,9 +43,10 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 		},
 		renderScore: function() {
-			var quizOverHTML = '<h1>The Quiz has ended</h1>',
-					quizResults = '<h2>Your final score was: <strong class="teal-text text-accent-3">' + (coolQuiz.score/coolQuiz.questions.length) * 100 +'%</strong></h2>';
-			this.renderHTML('quiz', quizOverHTML);
+			var quizOverHTML = '<h4>The Quiz has ended</h4>' + '<h5>Your final score was: <strong class="teal-text text-accent-3">' + (coolQuiz.score/coolQuiz.questions.length) * 100 +'%</strong></h5>';
+			this.removeHTML('quiz-over', 'removed');
+			this.renderHTML('quiz-over', quizOverHTML);
+			this.renderHTML('quiz-over', quizResults);
 		},
 		renderQuestionNumber: function() {
 			var currentQuestionNumber = coolQuiz.currentCount + 1;
@@ -62,8 +63,10 @@ document.addEventListener('DOMContentLoaded', function(){
 				this.selectionHandler('selection-' + i, selections[i]);
       }
     },
-		removeHTML: function(className) {
-
+		removeHTML: function(id, target) {
+			var element = document.getElementById(id),
+					targetElements = document.getElementById(target);
+			element.removeChild(targetElements);
 		},
 		renderHTML: function(id, text) {
 			var template = document.getElementById(id);

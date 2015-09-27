@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Quiz</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-		<!-- <script src="app.js"></script> -->
+		<script src="app.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -12,38 +12,43 @@
 				<div class="col s12">
 					<div class="card-panel z-depth-4">
 						<div class="container">
-							<div class="row">
-								<div class="col s9 removed">
-									<!-- <h1>Quiz</h1> -->
-								</div>
-								<div class="col s3">
-									<h3 id="question-count"></h3>
-								</div>
-							</div>
-							<div class="row quiz-over">
-								<h1>The Quiz has ended</h1>
-								<div class="removed">
-									<!-- <div class="col s3">
-										<h3 id="question-number"></h3>
-									</div>
-									<div class="col s9">
-										<h4 id="question"></h4>
-									</div> -->
-								</div>
-							</div>
-							<div class="row quiz-over">
-								<h2>Your score was: <strong class="teal-text text-accent-3">100%</strong></h2>
-								<div class="removed">
-									<!-- <div class="col s12">
-										<div class="collection hoverable">
-		        					<a href="#!" class="collection-item center-align" id="selection-0"></a>
-											<a href="#!" class="collection-item center-align" id="selection-1"></a>
-											<a href="#!" class="collection-item center-align" id="selection-2"></a>
-											<a href="#!" class="collection-item center-align" id="selection-3"></a>
+
+							<div id="quiz-over">
+								<div id='removed'>
+
+										<div class="row">
+											<div class="col s9">
+												<h1>Quiz</h1>
+											</div>
+											<div class="col s3">
+												<h3 id="question-count"></h3>
+											</div>
 										</div>
-									</div> -->
+
+										<div class="row">
+											<div class="col s3">
+												<h3 id="question-number"></h3>
+											</div>
+											<div class="col s9">
+												<h4 id="question"></h4>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col s12">
+												<div class="collection hoverable">
+				        					<a href="#!" class="collection-item center-align" id="selection-0"></a>
+													<a href="#!" class="collection-item center-align" id="selection-1"></a>
+													<a href="#!" class="collection-item center-align" id="selection-2"></a>
+													<a href="#!" class="collection-item center-align" id="selection-3"></a>
+												</div>
+											</div>
+										</div>
+
 								</div>
 							</div>
+
+
 						</div>
 					</div>
 				</div>
